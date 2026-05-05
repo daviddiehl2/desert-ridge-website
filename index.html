@@ -3,29 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desert Ridge Technologies - Managed IT Services</title>
+    <meta name="description" content="Desert Ridge Technologies LLC — Nevada-based managed IT services, cybersecurity, and technology consulting for businesses across Reno-Sparks and beyond.">
+    <title>Desert Ridge Technologies LLC — Managed IT Services in Nevada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23c77a2c'/%3E%3Cpath d='M16 44V20h12c8 0 13 4 13 12s-5 12-13 12H16zm8-7h4c3 0 5-2 5-5s-2-5-5-5h-4v10z' fill='white'/%3E%3C/svg%3E">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --brand: #c77a2c;
+            --brand-dark: #a85f1a;
+            --brand-light: #e89a4f;
+            --ink: #1a202c;
+            --ink-soft: #4a5568;
+            --muted: #718096;
+            --line: #e2e8f0;
+            --bg: #ffffff;
+            --bg-soft: #f7fafc;
+            --bg-warm: #fdf6ee;
+            --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -1px rgba(15, 23, 42, 0.05);
+            --shadow-lg: 0 20px 40px -12px rgba(15, 23, 42, 0.18);
+            --radius: 14px;
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--ink);
+            background: var(--bg);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header & Navigation */
+        h1, h2, h3, h4 {
+            font-family: 'Sora', 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+
+        a { color: var(--brand); text-decoration: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---------- Header ---------- */
         header {
-            background: #2d3748;
-            color: white;
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: saturate(180%) blur(14px);
+            -webkit-backdrop-filter: saturate(180%) blur(14px);
+            border-bottom: 1px solid var(--line);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
         nav {
@@ -34,454 +73,1040 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 2rem;
+            padding: 0.9rem 1.5rem;
         }
 
-        .logo {
+        .brand-mark {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            color: var(--ink);
         }
 
-        .logo img {
-            height: 70px;
+        .brand-mark img {
+            height: 52px;
             width: auto;
+            display: block;
+        }
+
+        .footer-brand .brand-mark img {
+            height: 56px;
+            /* Logo is orange-on-transparent; render fine on the dark footer as-is */
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
+            color: var(--ink-soft);
             font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            opacity: 0.8;
+        .nav-links a:hover { color: var(--brand); }
+
+        .nav-cta {
+            background: var(--ink);
+            color: white !important;
+            padding: 0.6rem 1.1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
         }
 
-        /* Hero Section */
+        .nav-cta:hover {
+            background: var(--brand);
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            color: var(--ink);
+            font-size: 1.2rem;
+            padding: 0.4rem 0.7rem;
+            cursor: pointer;
+        }
+
+        /* ---------- Hero ---------- */
         .hero {
-            background: linear-gradient(135deg, #c77a2c 0%, #d89038 100%);
-            color: white;
-            padding: 6rem 2rem;
+            position: relative;
+            background:
+                radial-gradient(ellipse at top right, rgba(232, 154, 79, 0.15), transparent 60%),
+                radial-gradient(ellipse at bottom left, rgba(199, 122, 44, 0.12), transparent 60%),
+                linear-gradient(180deg, #fdfbf8 0%, #f7f1e8 100%);
+            padding: 6rem 1.5rem 7rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(199, 122, 44, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(199, 122, 44, 0.06) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            border: 1px solid var(--line);
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .eyebrow .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #16a34a;
+            box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.18);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease-out;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            margin-bottom: 1.25rem;
+            color: var(--ink);
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
+            font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+            color: var(--ink-soft);
+            margin-bottom: 2.25rem;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #c77a2c;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
+        .cta-row {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.95rem 1.7rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .btn-primary {
+            background: var(--brand);
+            color: white;
+            box-shadow: 0 8px 20px rgba(199, 122, 44, 0.35);
         }
 
-        /* Services Section */
-        .services {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+        .btn-primary:hover {
+            background: var(--brand-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 26px rgba(199, 122, 44, 0.42);
         }
 
-        .section-title {
+        .btn-secondary {
+            background: white;
+            color: var(--ink);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-light);
+        }
+
+        /* ---------- Section base ---------- */
+        section.block {
+            padding: 6rem 1.5rem;
+        }
+
+        .section-head {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #c77a2c;
+            max-width: 720px;
+            margin: 0 auto 3rem;
         }
 
+        .section-tag {
+            display: inline-block;
+            color: var(--brand);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-head h2 {
+            font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+            margin-bottom: 0.9rem;
+        }
+
+        .section-head p {
+            color: var(--ink-soft);
+            font-size: 1.05rem;
+        }
+
+        /* ---------- Services ---------- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .service-card {
             background: white;
             padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand), var(--brand-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
         }
+
+        .service-card:hover::before { transform: scaleX(1); }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            background: var(--bg-warm);
+            color: var(--brand);
+            display: grid;
+            place-items: center;
+            margin-bottom: 1.2rem;
         }
 
+        .service-icon svg { width: 26px; height: 26px; }
+
         .service-card h3 {
-            color: #c77a2c;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
+            color: var(--ink);
         }
 
         .service-card p {
-            color: #666;
+            color: var(--ink-soft);
+            font-size: 0.97rem;
         }
 
-        /* Why Choose Us */
-        .why-choose {
-            background: #f8fafc;
-            padding: 4rem 2rem;
-            margin: 4rem 0;
-        }
-
-        .why-choose-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Technologies Section */
-        .technologies {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            align-items: center;
-        }
-
-        .tech-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .tech-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-
-        .tech-item img {
-            max-width: 120px;
-            max-height: 60px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
+        /* ---------- Why ---------- */
+        .why {
+            background: var(--bg-soft);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .feature {
             display: flex;
             gap: 1rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
         }
 
         .feature-icon {
-            font-size: 2rem;
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            display: grid;
+            place-items: center;
+        }
+
+        .feature-icon svg { width: 22px; height: 22px; }
+
+        .feature h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature p {
+            color: var(--ink-soft);
+            font-size: 0.94rem;
+        }
+
+        /* ---------- Tech ---------- */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .tech-item {
+            background: white;
+            padding: 1.5rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            min-height: 120px;
+            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            text-align: center;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-light);
+        }
+
+        .tech-logo {
+            height: 38px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: filter 0.25s;
+        }
+
+        .tech-item:hover .tech-logo { filter: grayscale(0%); }
+
+        .tech-label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            font-weight: 500;
+        }
+
+        .tech-svg {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+
+        .tech-fallback {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+
+        /* ---------- Contact ---------- */
+        .contact-wrap {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-wrap::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(199, 122, 44, 0.4), transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-wrap h2 {
+            color: white;
+            font-size: clamp(1.7rem, 3vw, 2.3rem);
+            margin-bottom: 1rem;
+        }
+
+        .contact-wrap p {
+            color: #cbd5e0;
+            margin-bottom: 1.8rem;
+            font-size: 1.02rem;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: #e2e8f0;
+        }
+
+        .contact-list li svg {
+            width: 20px; height: 20px;
+            color: var(--brand-light);
             flex-shrink: 0;
         }
 
-        .feature h4 {
-            color: #c77a2c;
-            margin-bottom: 0.5rem;
+        .contact-list a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
 
-        /* Contact Section */
-        .contact {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 0 2rem;
+        .contact-list a:hover { border-bottom-color: var(--brand-light); }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 1.8rem;
+            position: relative;
+            backdrop-filter: blur(6px);
+        }
+
+        .contact-form .field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form label {
+            font-size: 0.82rem;
+            color: #cbd5e0;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 0.75rem 0.9rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--brand-light);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .contact-form textarea { resize: vertical; min-height: 90px; }
+
+        .contact-form button {
+            width: 100%;
+            background: var(--brand);
+            color: white;
+            border: none;
+            padding: 0.85rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .contact-form button:hover {
+            background: var(--brand-dark);
+            transform: translateY(-1px);
+        }
+
+        .contact-form button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-status {
+            margin-top: 0.9rem;
+            font-size: 0.9rem;
+            min-height: 1.2em;
             text-align: center;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+        .form-status.success { color: #86efac; }
+        .form-status.error   { color: #fca5a5; }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background: #0f172a;
+            color: #cbd5e0;
+            padding: 3rem 1.5rem 1.5rem;
+            margin-top: 5rem;
         }
 
-        .contact-item {
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            font-size: 0.92rem;
+            margin-top: 0.8rem;
+            max-width: 360px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            font-size: 0.92rem;
+            font-family: 'Sora', sans-serif;
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-col ul {
+            list-style: none;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            gap: 0.55rem;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover { color: var(--brand-light); }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 1.5rem auto 0;
+            display: flex;
+            justify-content: space-between;
+            color: #64748b;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
             gap: 0.5rem;
         }
 
-        .contact-item a {
-            color: #d89038;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: #1e293b;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-
+        /* ---------- Animations ---------- */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero .eyebrow,
+        .hero h1,
+        .hero p,
+        .hero .cta-row {
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        .hero h1 { animation-delay: 0.05s; }
+        .hero p { animation-delay: 0.15s; }
+        .hero .cta-row { animation-delay: 0.25s; }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 900px) {
+            .contact-wrap {
+                grid-template-columns: 1fr;
+                padding: 2.5rem 1.8rem;
+            }
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                border-bottom: 1px solid var(--line);
+                padding: 1rem 1.5rem;
+                gap: 1rem;
+                box-shadow: var(--shadow-md);
             }
+            section.block { padding: 4.5rem 1.5rem; }
+            .hero { padding: 4.5rem 1.5rem 5rem; }
+            .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; }
+        }
 
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
+        @media (max-width: 480px) {
+            .brand-mark .wordmark .tag { display: none; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="logo.png" alt="Desert Ridge Technologies">
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn">☰</button>
-        </nav>
-    </header>
 
-    <section class="hero" id="home">
-        <h1>Enterprise-Grade IT Solutions for Your Business</h1>
-        <p>Reliable managed IT services, cybersecurity, and technology consulting in Nevada</p>
-        <a href="#contact" class="cta-button">Get Started Today</a>
-    </section>
+<header>
+    <nav>
+        <a href="#home" class="brand-mark" aria-label="Desert Ridge Technologies LLC home">
+            <img src="logo.png" alt="Desert Ridge Technologies LLC">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">Why Us</a></li>
+            <li><a href="#technologies">Technologies</a></li>
+            <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+        </ul>
+        <button class="mobile-menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </nav>
+</header>
 
-    <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <span class="eyebrow"><span class="dot"></span> Now serving Reno-Sparks &amp; Northern Nevada</span>
+        <h1>Enterprise-grade IT, <span class="accent">built for Nevada businesses</span></h1>
+        <p>Managed IT, cybersecurity, and infrastructure that just works — backed by a local team that answers when you call.</p>
+        <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">
+                Get a free consultation
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#services" class="btn btn-secondary">Explore services</a>
+        </div>
+    </div>
+</section>
+
+<section class="block" id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">What we do</span>
+            <h2>Services that keep your business moving</h2>
+            <p>From day-to-day IT to long-term strategy, we handle the technology so you can focus on running the business.</p>
+        </div>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">💻</div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
                 <h3>Managed IT Services</h3>
-                <p>Comprehensive IT management and support to keep your business running smoothly 24/7.</p>
+                <p>Day-to-day IT management that keeps your team productive and your systems running smoothly.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🔒</div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
                 <h3>Cybersecurity</h3>
-                <p>Advanced security solutions to protect your data, networks, and systems from threats.</p>
+                <p>Multi-layered security — from endpoint protection and email filtering to firewall management and user training.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">📋</div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H5a2 2 0 0 0-2 2v7h18v-7a2 2 0 0 0-2-2h-4"/><rect x="9" y="3" width="6" height="11" rx="1"/></svg>
+                </div>
                 <h3>Project Management</h3>
-                <p>Expert coordination and execution of your technology projects from planning to completion.</p>
+                <p>Coordinated execution for office moves, network refreshes, and migrations — on time, on budget, on plan.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>Backup & Disaster Recovery</h3>
-                <p>Comprehensive data protection and recovery strategies for business continuity.</p>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </div>
+                <h3>Backup &amp; Disaster Recovery</h3>
+                <p>Verified, automated backups with tested recovery procedures — so a bad day never becomes a bad quarter.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">📊</div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                </div>
                 <h3>IT Consulting</h3>
-                <p>Strategic technology planning and optimization for long-term success.</p>
+                <p>Strategic technology roadmaps, vendor selection, and budgeting guidance aligned with your business goals.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                </div>
+                <h3>Cloud &amp; Microsoft 365</h3>
+                <p>Smooth migrations, license optimization, and ongoing administration for Microsoft 365, Azure, and hybrid setups.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="why-choose" id="about">
-        <div class="why-choose-content">
-            <h2 class="section-title">Why Choose Desert Ridge Technologies?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <div>
-                        <h4>Rapid Response</h4>
-                        <p>Fast response times to minimize downtime and keep your business running.</p>
-                    </div>
+<section class="block why" id="about">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">Why choose us</span>
+            <h2>A partner, not just a provider</h2>
+            <p>We're built around responsiveness, transparency, and the kind of long-term thinking that protects your investment.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature reveal">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🎯</div>
-                    <div>
-                        <h4>Proactive Monitoring</h4>
-                        <p>We identify and resolve issues before they impact your operations.</p>
-                    </div>
+                <div>
+                    <h4>Rapid response</h4>
+                    <p>Same-day acknowledgment, fast triage, and clear communication every step of the way.</p>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">🤝</div>
-                    <div>
-                        <h4>Local Expertise</h4>
-                        <p>Nevada-based team with deep understanding of regional business needs.</p>
-                    </div>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
                 </div>
-                <div class="feature">
-                    <div class="feature-icon">💰</div>
-                    <div>
-                        <h4>Cost-Effective</h4>
-                        <p>Predictable pricing and scalable solutions that fit your budget.</p>
-                    </div>
+                <div>
+                    <h4>Proactive monitoring</h4>
+                    <p>We catch failing drives, expiring certs, and security issues before they cause downtime.</p>
+                </div>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                    <h4>Local expertise</h4>
+                    <p>A Nevada-based team that understands the regional business landscape and shows up in person when needed.</p>
+                </div>
+            </div>
+            <div class="feature reveal">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div>
+                    <h4>Predictable pricing</h4>
+                    <p>Flat-rate plans with no surprise invoices — scale capacity up or down as your business changes.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="technologies" id="technologies">
-        <h2 class="section-title">Technologies We Work With</h2>
+<section class="block" id="technologies">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="section-tag">Technology partners</span>
+            <h2>Built on platforms you can trust</h2>
+            <p>We're certified and experienced across the industry-leading platforms that power modern business infrastructure.</p>
+        </div>
         <div class="tech-grid">
-            <div class="tech-item">
-                <img src="office365-logo.png" alt="Microsoft Office 365">
+            <div class="tech-item reveal" title="Microsoft 365">
+                <img class="tech-logo" src="office365-logo.png" alt="" loading="lazy">
+                <span class="tech-label">Microsoft 365</span>
             </div>
-            <div class="tech-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="Windows Server">
+            <div class="tech-item reveal" title="Microsoft Azure">
+                <svg class="tech-svg" viewBox="0 0 96 96" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="azGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#0078D4"/>
+                            <stop offset="1" stop-color="#0050a0"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#azGrad)" d="M44.6 9.3 22.7 71.4l-17.4 5.5h28.6l16.7-22.6L66 76.9l24.7.1L66 9.3zM48.6 25l-7.7 18.6 19.6 23.4-31 5.7L48.6 25z"/>
+                </svg>
+                <span class="tech-label">Microsoft Azure</span>
             </div>
-            <div class="tech-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg" alt="VMware">
+            <div class="tech-item reveal" title="Amazon Web Services">
+                <svg class="tech-svg" viewBox="0 0 110 60" aria-hidden="true">
+                    <text x="55" y="36" text-anchor="middle" font-family="'Sora', Arial, sans-serif" font-weight="900" font-size="30" fill="#232F3E" letter-spacing="-1.5">aws</text>
+                    <path d="M22 48 Q55 60 88 48" stroke="#FF9900" stroke-width="3" fill="none" stroke-linecap="round"/>
+                    <path d="M86 45 L91 48 L88 53" stroke="#FF9900" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="tech-label">AWS</span>
             </div>
-            <div class="tech-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg" alt="Cisco">
+            <div class="tech-item reveal" title="Windows Server">
+                <svg class="tech-svg" viewBox="0 0 88 88" aria-hidden="true">
+                    <path fill="#00A4EF" d="M0 12.3 35.7 7.5v34.4H0z"/>
+                    <path fill="#00A4EF" d="M0 75.7l35.7 4.8V46.1H0z"/>
+                    <path fill="#00A4EF" d="M39.6 81 88 88V46.1H39.6z"/>
+                    <path fill="#00A4EF" d="M39.6 11.5V41.9H88V0z"/>
+                </svg>
+                <span class="tech-label">Windows Server</span>
             </div>
-            <div class="tech-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/300px-Dell_Logo.svg.png" alt="Dell">
+            <div class="tech-item reveal" title="Windows 11">
+                <svg class="tech-svg" viewBox="0 0 88 88" aria-hidden="true">
+                    <rect x="0"  y="0"  width="40" height="40" fill="#0078D4"/>
+                    <rect x="48" y="0"  width="40" height="40" fill="#0078D4"/>
+                    <rect x="0"  y="48" width="40" height="40" fill="#0078D4"/>
+                    <rect x="48" y="48" width="40" height="40" fill="#0078D4"/>
+                </svg>
+                <span class="tech-label">Windows 11</span>
             </div>
-            <div class="tech-item">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_logo_2012.svg/300px-HP_logo_2012.svg.png" alt="HP">
+            <div class="tech-item reveal" title="VMware">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/vmware/607078" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'VMware',className:'tech-fallback'}))">
+                <span class="tech-label">VMware</span>
             </div>
-            <div class="tech-item">
-                <img src="ruckus-logo.png" alt="Ruckus Wireless">
+            <div class="tech-item reveal" title="Cisco">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/cisco/1BA0D7" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Cisco',className:'tech-fallback'}))">
+                <span class="tech-label">Cisco</span>
             </div>
-            <div class="tech-item">
-                <img src="sonicwall-logo.png" alt="SonicWall">
+            <div class="tech-item reveal" title="Dell">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/dell/007DB8" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Dell',className:'tech-fallback'}))">
+                <span class="tech-label">Dell</span>
             </div>
-            <div class="tech-item">
-                <img src="aruba-logo.png" alt="HPE Aruba Networking">
+            <div class="tech-item reveal" title="HP">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/hp/0096D6" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'HP',className:'tech-fallback'}))">
+                <span class="tech-label">HP</span>
+            </div>
+            <div class="tech-item reveal" title="HPE Aruba Networking">
+                <img class="tech-logo" src="aruba-logo.png" alt="" loading="lazy">
+                <span class="tech-label">HPE Aruba</span>
+            </div>
+            <div class="tech-item reveal" title="Ubiquiti UniFi">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/ubiquiti/0559C9" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'UniFi',className:'tech-fallback'}))">
+                <span class="tech-label">Ubiquiti UniFi</span>
+            </div>
+            <div class="tech-item reveal" title="Ruckus Wireless">
+                <img class="tech-logo" src="ruckus-logo.png" alt="" loading="lazy">
+                <span class="tech-label">Ruckus</span>
+            </div>
+            <div class="tech-item reveal" title="Netgear">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/netgear/2B2B2B" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Netgear',className:'tech-fallback'}))">
+                <span class="tech-label">Netgear</span>
+            </div>
+            <div class="tech-item reveal" title="SonicWall">
+                <img class="tech-logo" src="sonicwall-logo.png" alt="" loading="lazy">
+                <span class="tech-label">SonicWall</span>
+            </div>
+            <div class="tech-item reveal" title="Fortinet">
+                <img class="tech-logo" src="https://cdn.simpleicons.org/fortinet/EE3124" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'Fortinet',className:'tech-fallback'}))">
+                <span class="tech-label">Fortinet</span>
+            </div>
+            <div class="tech-item reveal" title="ThreatLocker">
+                <img class="tech-logo" src="ThreatLocker-Logo.png" alt="" loading="lazy">
+                <span class="tech-label">ThreatLocker</span>
+            </div>
+            <div class="tech-item reveal" title="Cisco Duo Security">
+                <svg class="tech-svg" viewBox="0 0 100 60" aria-hidden="true">
+                    <text x="50" y="42" text-anchor="middle" font-family="'Sora', Arial, sans-serif" font-weight="900" font-size="34" fill="#6BBE45" letter-spacing="-1.5">duo</text>
+                </svg>
+                <span class="tech-label">Cisco Duo</span>
+            </div>
+            <div class="tech-item reveal" title="ConnectWise">
+                <svg class="tech-svg" viewBox="0 0 200 50" aria-hidden="true">
+                    <text x="100" y="34" text-anchor="middle" font-family="'Sora', Arial, sans-serif" font-weight="800" font-size="24" fill="#2D2A6E" letter-spacing="-0.6">ConnectWise</text>
+                </svg>
+                <span class="tech-label">ConnectWise</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p>Ready to transform your IT infrastructure? Contact us today for a free consultation.</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                📧 <a href="mailto:info@drtnv.com">info@drtnv.com</a>
+<section class="block" id="contact">
+    <div class="container">
+        <div class="contact-wrap reveal">
+            <div>
+                <h2>Let's talk about your IT.</h2>
+                <p>Tell us a bit about your business and what you need. We'll follow up within one business day to schedule a free consultation.</p>
+                <ul class="contact-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:info@drtnv.com">info@drtnv.com</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Reno-Sparks, Nevada
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Mon–Fri · 8am–6pm PT
+                    </li>
+                </ul>
             </div>
-            <div class="contact-item">
-                📍 Reno-Sparks, Nevada
-            </div>
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="4daa4801-f574-46e0-9bf2-87fdd0ea091c">
+                <input type="hidden" name="subject" value="New website inquiry · Desert Ridge Technologies LLC">
+                <input type="hidden" name="from_name" value="Desert Ridge Technologies LLC website">
+                <!-- Honeypot: real users won't fill this; bots will -->
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required placeholder="Your name">
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required placeholder="you@company.com">
+                </div>
+                <div class="field">
+                    <label for="message">How can we help?</label>
+                    <textarea id="message" name="message" required placeholder="Briefly describe what you need…"></textarea>
+                </div>
+                <button type="submit" id="contactSubmit">Send message</button>
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2025 Desert Ridge Technologies. All rights reserved.</p>
-        <p>Professional Managed IT Services Provider</p>
-    </footer>
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <a href="#home" class="brand-mark">
+                <img src="logo.png" alt="Desert Ridge Technologies LLC">
+            </a>
+            <p>Nevada-based managed IT, cybersecurity, and infrastructure services for businesses that need their technology to just work.</p>
+        </div>
+        <div class="footer-col">
+            <h5>Services</h5>
+            <ul>
+                <li><a href="#services">Managed IT</a></li>
+                <li><a href="#services">Cybersecurity</a></li>
+                <li><a href="#services">Cloud &amp; Microsoft 365</a></li>
+                <li><a href="#services">Backup &amp; DR</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+                <li><a href="#about">Why Us</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="mailto:info@drtnv.com">info@drtnv.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Desert Ridge Technologies LLC. All rights reserved.</span>
+        <span>Reno-Sparks · Northern Nevada</span>
+    </div>
+</footer>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+<script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a =>
+        a.addEventListener('click', () => navLinks.classList.remove('open'))
+    );
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = '#2d3748';
-                navLinks.style.padding = '1rem';
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('in');
+                io.unobserve(e.target);
             }
         });
-    </script>
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Stagger service cards & tech items via small delays
+    document.querySelectorAll('.services-grid .service-card, .features-grid .feature, .tech-grid .tech-item')
+        .forEach((el, i) => { el.style.transitionDelay = (i * 60) + 'ms'; });
+
+    // Contact form: POST to Web3Forms (https://web3forms.com)
+    const contactForm = document.getElementById('contactForm');
+    const formStatus  = document.getElementById('formStatus');
+    const submitBtn   = document.getElementById('contactSubmit');
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        formStatus.className = 'form-status';
+        formStatus.textContent = '';
+
+        const data = new FormData(contactForm);
+        // Set the reply-to so your reply goes back to the visitor
+        data.append('replyto', data.get('email'));
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data,
+                headers: { Accept: 'application/json' }
+            });
+            const json = await res.json();
+            if (res.ok && json.success) {
+                formStatus.classList.add('success');
+                formStatus.textContent = "Thanks — we'll be in touch within one business day.";
+                contactForm.reset();
+            } else {
+                throw new Error(json.message || 'Submission failed');
+            }
+        } catch (err) {
+            console.error('Contact form error:', err);
+            formStatus.classList.add('error');
+            formStatus.textContent = "Something went wrong. Please email info@drtnv.com directly.";
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send message';
+        }
+    });
+</script>
+
 </body>
 </html>
